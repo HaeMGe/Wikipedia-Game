@@ -8,6 +8,7 @@ def main():
     endwert = input("Wo soll die Suche beendet werden? ")
     #durchgehen = ["Fru%CC%88hstu%CC%88cksfleisch"]
     durchgehen = [ startwert]
+    alle = [" "]
     anzahlDurchgang = [0]
     titel = durchgehen[0]
     #durchgehen.pop(0)
@@ -38,13 +39,22 @@ def main():
                     x = 0
                     for link in titel:
                         #print(str(x) + " " + link["title"])
-                        durchgehen.append(link["title"])
-                        anzahlDurchgang.append(anzahlDurchgang[0]+1)
+                        if link['title'] in durchgehen:
+                          #print(" ")
+                          u = 0
+                        elif link['title'] in alle:
+                          #print(" ")
+                          u = 0
+                        else:
+                          durchgehen.append(link["title"])
+                        
+                          anzahlDurchgang.append(anzahlDurchgang[0]+1)
                         #liste.append(link["title"])
-                        x += 1
-        #print("------------------------------------")
+                          x += 1
+        print("------------------------------------")
         #zahl = int(input("Rate doch!"))
         #titel = liste[zahl]
+        alle.append(durchgehen[0])
         durchgehen.pop(0)
         anzahlDurchgang.pop(0)
         if durchgehen[0] != None:
