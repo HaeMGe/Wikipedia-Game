@@ -66,6 +66,9 @@ def main():
 
     #print("Fertichhhh in " + str(i))
     print("Vom Start bis Ende kommt man mit "+str(anzahlDurchgang[0])+" Schritten")
+    
+    with open('d.json', 'w') as jsondatei:
+            json.dump(str(anzahlDurchgang[0]), jsondatei)
 
 
 # https://www.utf8-chartable.de/
